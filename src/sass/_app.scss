@@ -1,0 +1,113 @@
+@import "_colors.scss";
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgba(#eee, 0.9);
+    display: grid;
+    align-items: center;
+    height: 100vh;
+}
+
+.app {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0 rgba(#eee, 0.7);
+    padding: 30px 20px;
+    & {
+        @media (min-width: 767px) {
+            margin: 0 auto;
+            width: 60%;
+        }
+    }
+
+    button {
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        height: fit-content;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-size: 1em;
+        border: 1px solid transparent;
+        color: $white;
+        transition: color 0.3s, background-color 0.3s;
+    }
+
+    input {
+        border: 1px solid rgba(gray, 0.6);
+        border-radius: 4px;
+        padding: 10px;
+        outline: none;
+        &:focus {
+            outline: none;
+
+            border: 1px solid $main-color;
+        }
+    }
+
+    .form {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+        align-items: center;
+        justify-content: space-between;
+        input {
+            width: 100%;
+            outline: none;
+            &:focus {
+                outline: none;
+
+                border: 1px solid $main-color;
+            }
+        }
+        .btn_add {
+            background-color: $main-color;
+            &:hover {
+                color: $main-color;
+                border: 1px solid $main-color;
+                background-color: $white;
+            }
+        }
+    }
+
+    .list {
+        overflow-y: scroll;
+        padding: 15px;
+        height: 400px;
+        .item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border-bottom: 1px solid rgba(#000, 0.2);
+            padding-bottom: 10px;
+            .btn-actions {
+                flex-wrap: wrap;
+                display: flex;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .btn_edit {
+                background-color: #389838;
+                &:hover {
+                    color: #389838;
+                    border: 1px solid #389838;
+                    background-color: $white;
+                }
+            }
+            .btn_delete {
+                background-color: #ec3c3c;
+                &:hover {
+                    color: #ec3c3c;
+                    border: 1px solid #ec3c3c;
+                    background-color: $white;
+                }
+            }
+        }
+    }
+}
